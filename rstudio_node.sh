@@ -26,8 +26,11 @@ wget -q http://download2.rstudio.org/rstudio-server-0.98.501-amd64.deb
 
 gdebi -n rstudio-server-0.98.501-amd64.deb
 
-sudo chmod -R 777 /usr/lib/R/library
-sudo chmod -R 777 /usr/share/R/doc
+chmod -R 777 /usr/lib/R/library
+chmod -R 777 /usr/share/R/doc
+
+R -e "update.packages(checkBuilt = TRUE, ask = FALSE, repos='http://cran.rstudio.com/')"
+R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
 # Do not let this run again
 touch /.vagrant_build_done
