@@ -20,7 +20,7 @@ echo "deb http://lib.stat.cmu.edu/R/CRAN//bin/linux/ubuntu precise/" | sudo tee 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
 apt-get update
-apt-get install -y r-base gdebi-core libapparmor1
+apt-get install -y r-base gdebi-core libapparmor1 openjdk-7-jre-headless
 
 wget -q http://download2.rstudio.org/rstudio-server-0.98.501-amd64.deb
 
