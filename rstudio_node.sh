@@ -23,8 +23,10 @@ apt-get update
 apt-get install -y r-base gdebi-core libapparmor1 openjdk-7-jre-headless
 
 wget -q http://download2.rstudio.org/rstudio-server-0.98.501-amd64.deb
+wget -q http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.0.0.42-amd64.deb
 
 gdebi -n rstudio-server-0.98.501-amd64.deb
+gdebi -n shiny-server-1.0.0.42-amd64.deb
 
 chmod -R 777 /usr/lib/R/library
 chmod -R 777 /usr/share/R/doc
