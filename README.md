@@ -11,11 +11,13 @@ Start a single Ubuntu Precise (12.04) node containing R and RStudio that respond
 
 4. Run 'Vagrant up'
 
-Now you can visit the following URLs in your browser:
+Now you can visit the following URLs in your browser and login:
 
-http://affy-rstudio:8787/
+     URL: http://affy-rstudio:8787/
+    User: rstudio
+Password: password
 
-Log into the web application using 'rstudio' as the username and 'password' as the password.
+2014-04-16 - Google Chrome has stopped working to display the site. However, Firefox is working fine.
 
 You can SSH to the node using the following command. Notice that the hostname starts with 'affy-' but that 
 the vagrant node does not have the prefix.
