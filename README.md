@@ -53,3 +53,47 @@ At 80G you should have plenty of room to process data sets.
      library(shiny)
      runExample("01_hello", port=9876, host='10.211.55.110')
 
+----------------
+- RMarkdown
+----------------
+
+The installation process to install RMarkdown is too length for me to include directly because, perhaps, not everyone needs it. However, here are the installation steps:
+
+     # install the Glasgow Haskell Compiler
+     sudo apt-get install -y build-dep freeglut3 freeglut3-dev libcurl4-gnutls-dev libgmp3c2 libgmp3-dev 
+     wget http://www.haskell.org/ghc/dist/7.6.3/ghc-7.6.3-x86_64-unknown-linux.tar.bz2
+     bunzip2 ghc-7.6.3-x86_64-unknown-linux.tar.bz2
+     tar xvf ghc-7.6.3-x86_64-unknown-linux.tar
+     cd ghc-7.6.3
+     ./configure
+     sudo make install
+
+     # install the Haskell Platform
+     wget http://www.haskell.org/platform/download/2013.2.0.0/haskell-platform-2013.2.0.0.tar.gz
+     tar xvfz haskell-platform-2013.2.0.0.tar.gz
+     cd haskell-platform-2013.2.0.0
+     ./configure
+     make
+     sudo make install
+
+     # Update Haskell packages
+     cabal update
+     # Get latest version of Cabal
+     cabal install cabal-install
+
+     # Install the latest Pandoc
+     cabal install pandoc pandoc-citeproc
+
+     # check that you can ran pandoc
+     pandoc -v
+     # otherwise create a symlink
+     sudo ln -s /home/vagrant/.cabal/bin/pandoc /usr/bin/pandoc
+
+Then run the following inside RStudio:
+
+     install.packages('knitr')
+     install.packages("devtools")
+     devtools::install_github("rstudio/rmarkdown")
+
+And finally you can use File > New File > R Markdown and develop your RMarkdown file.
+
