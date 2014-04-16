@@ -14,8 +14,8 @@ Start a single Ubuntu Precise (12.04) node containing R and RStudio that respond
 Now you can visit the following URLs in your browser and login:
 
      URL: http://affy-rstudio:8787/
-    User: rstudio
-Password: password
+     User: rstudio
+     Password: password
 
 2014-04-16 - Google Chrome has stopped working to display the site. However, Firefox is working fine.
 
@@ -43,3 +43,13 @@ Filesystem                  Size  Used Avail Use% Mounted on
 /dev/mapper/precise64-root   79G  2.7G   73G   4% /
 
 At 80G you should have plenty of room to process data sets.
+
+----------------
+- Shiny
+----------------
+
+2014-Apr-15 The project was updated to install Shiny. In the console, run the following to see an example application:
+
+     library(shiny)
+     runExample("01_hello", port=9876, host='10.211.55.110')
+
