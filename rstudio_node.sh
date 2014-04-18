@@ -22,6 +22,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 apt-get update
 apt-get build-dep -y libcurl4-gnutls-dev
 apt-get build-dep -y libcurl4-openssl-dev
+apt-get install libcurl4-openssl-dev
 apt-get install -y gdebi-core
 apt-get install -y libapparmor1
 apt-get install -y openjdk-7-jre-headless
