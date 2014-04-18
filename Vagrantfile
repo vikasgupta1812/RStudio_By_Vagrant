@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
     rstudio.vm.network :private_network, ip: "10.211.55.110"
     rstudio.vm.hostname = rstudio_node_name
     rstudio.vm.provision :shell, :path => "rstudio_node.sh"
+    rstudio.ssh.forward_x11 = true
   end
 
 end

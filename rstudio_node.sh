@@ -39,5 +39,8 @@ chmod -R 777 /usr/share/R/doc
 R -e "update.packages(checkBuilt = TRUE, ask = FALSE, repos='http://cran.rstudio.com/')"
 R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
+# Update /etc/hosts with localhost so that X11 port forwarding will work.
+echo "127.0.0.1	localhost" >> /etc/hosts
+
 # Do not let this run again
 touch /.vagrant_build_done
