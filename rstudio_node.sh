@@ -20,9 +20,12 @@ echo "deb http://lib.stat.cmu.edu/R/CRAN//bin/linux/ubuntu precise/" | sudo tee 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
 apt-get update
-apt-get install -y r-base gdebi-core libapparmor1 openjdk-7-jre-headless
 apt-get build-dep -y libcurl4-gnutls-dev
 apt-get build-dep -y libcurl4-openssl-dev
+apt-get install -y gdebi-core
+apt-get install -y libapparmor1
+apt-get install -y openjdk-7-jre-headless
+apt-get install -y r-base
 
 wget -q http://download2.rstudio.org/rstudio-server-0.98.501-amd64.deb
 wget -q http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.0.0.42-amd64.deb
