@@ -52,8 +52,10 @@ R -e "install.packages('RCurl', repos='http://cran.rstudio.com/')"
 R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
 R -e "install.packages('rgeos', repos='http://cran.rstudio.com/')"
 R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-R -e "install.packages('splancs', repos='http://cran.rstudio.com/')"
-
+R -e "install.packages('raster', repos='http://cran.rstudio.com/')"
+R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
+R -e "install.packages('googleVis', repos='http://cran.rstudio.com/')"
+R -e "install.github('twitteR', username='geoffjentry)"
 
 # Update /etc/hosts with localhost so that X11 port forwarding will work.
 echo "127.0.0.1	localhost" >> /etc/hosts
