@@ -44,7 +44,16 @@ chmod -R 777 /usr/lib/R/library
 chmod -R 777 /usr/share/R/doc
 
 R -e "update.packages(checkBuilt = TRUE, ask = FALSE, repos='http://cran.rstudio.com/')"
+R -e "install.packages('ggmap', repos='http://cran.rstudio.com/')"
+R -e "install.packages('gpclib', repos='http://cran.rstudio.com/')"
+R -e "install.packages('knitr', repos='http://cran.rstudio.com/')"
+R -e "install.packages('maptools', repos='http://cran.rstudio.com/')"
+R -e "install.packages('RCurl', repos='http://cran.rstudio.com/')"
+R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
+R -e "install.packages('rgeos', repos='http://cran.rstudio.com/')"
 R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+R -e "install.packages('splancs', repos='http://cran.rstudio.com/')"
+
 
 # Update /etc/hosts with localhost so that X11 port forwarding will work.
 echo "127.0.0.1	localhost" >> /etc/hosts
