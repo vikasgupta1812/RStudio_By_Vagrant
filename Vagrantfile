@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     rstudio.vm.network "forwarded_port", guest: 8787, host: 8787
     rstudio.vm.hostname = rstudio_node_name
     rstudio.vm.provision :shell, :path => "rstudio_node.sh"
-    #rstudio.ssh.forward_x11 = true
+    rstudio.ssh.forward_x11 = true
     rstudio.vm.synced_folder "C:\\Users\\vikas\\share", "/home/vagrant/share"
   end
 
