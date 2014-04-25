@@ -1,5 +1,32 @@
 #!/bin/bash
 
+$(which mysql > /dev/null 2>&1)
+FOUND_MYSQL=$?
+if [ "$FOUND_MYSQL" -ne '0' ]; then
+  echo 'Attempting to install mySQL.'
+  apt-get update
+  #apt-get install -f -y pwgen >/dev/null; 
+  #MYSQL_PASS=$(pwgen -s 12 1); 
+  #cat <<MYSQL_PRESEED | debconf-set-selections
+  #mysql-server-5.1 mysql-server/root_password password $MYSQL_PASS 
+  #mysql-server-5.1 mysql-server/root_password_again password $MYSQL_PASS 
+  #mysql-server-5.1 mysql-server/start_on_boot boolean true MYSQL_PRESEED 
+
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -f -y mysql-server 
+
+  #echo "MySQL Password set to '${MYSQL_PASS}'. Remember to delete ~/.mysql.passwd" | tee ~/.mysql.passwd
+  # - See more at: http://ajohnstone.com/achives/installing-java-mysql-unattendednon-interactive-installation/#sthash.DI5V5anA.dpuf;
+
+  # Additional notes after install: 
+  # Place on a public interface 
+  sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf 
+  sudo service mysql restart 
+else
+  echo 'mySQL found.'
+fi
+echo "Install Package RMySQL"
+R -e "install.packages('RMySQL', repos='http://cran.rstudio.com/')"
+
 
 $(which git > /dev/null 2>&1)
 FOUND_GIT=$?
@@ -81,7 +108,9 @@ R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 R -e "install.packages('raster', repos='http://cran.rstudio.com/')"
 R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
 R -e "install.packages('googleVis', repos='http://cran.rstudio.com/')"
+R -e "install.packages('RMySQL', repos='http://cran.rstudio.com/')"
 R -e "install.github('twitteR', username='geoffjentry)"
+
 
 # Update /etc/hosts with localhost so that X11 port forwarding will work.
 echo "127.0.0.1	localhost" >> /etc/hosts
